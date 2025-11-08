@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/billingservice/pom.xml" />
         <option value="$PROJECT_DIR$/analystic-service/pom.xml" />
         <option value="$PROJECT_DIR$/analytic-service/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/auth-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

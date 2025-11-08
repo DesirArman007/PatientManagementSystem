@@ -14,7 +14,7 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 
 #build the project and package it into a jar file
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
 #starts a new docker build stage
 #uses the official openjdk image with jdk-21
@@ -26,12 +26,12 @@ FROM eclipse-temurin:21-jdk AS runner
 WORKDIR /app
 
 #copies the packeged JAR file from earlier builder stage to runner stage
-# SOURCE: .app/target/patient-service-0.0.1-SNAPSHOT.jar
+# SOURCE: .app/target/api-gateway-0.0.1-SNAPSHOT.jar
 #Destination: ./app.jar
-COPY --from=builder app/target/patient-service-0.0.1-SNAPSHOT.jar ./app.jar
+COPY --from=builder app/target/api-gateway-0.0.1-SNAPSHOT.jar ./app.jar
 
 #application inside the container listens on port
-EXPOSE 4000
+EXPOSE 4004
 
 #define the startup command for the container
 ENTRYPOINT ["java","-jar","app.jar"]
