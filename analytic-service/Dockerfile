@@ -19,7 +19,7 @@ RUN mvn clean package
 #starts a new docker build stage
 #uses the official openjdk image with jdk-21
 #this stage will run your app(maven is no longer needed)
-FROM openjdk:21-jdk AS runner
+FROM eclipse-temurin:21-jdk AS runner
 
 #sets the working directory inside conatiner to /app
 #if it doesn't exist the docker will create it

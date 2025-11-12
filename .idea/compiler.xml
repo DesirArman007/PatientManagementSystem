@@ -9,6 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="analytics-service" />
         <module name="auth-service" />
+        <module name="integration-tests" />
+        <module name="infrastructure" />
         <module name="billingservice" />
       </profile>
       <profile name="Annotation profile for patient-service" enabled="true">
